@@ -21,6 +21,17 @@ export function drawLine({ x1 = 0, y1 = 0, x2 = 10, y2 = 10 }, ctx) {
   ctx.closePath();
 }
 
+export function drawCircle(
+  { x = 10, y = 10, r = 10, color = "#000000", filled = true },
+  ctx
+) {
+  ctx.beginPath();
+  ctx.fillStyle = color;
+  ctx.arc(x, y, r, 0, 2 * Math.PI);
+  filled ? ctx.fill() : ctx.stroke();
+  ctx.closePath();
+}
+
 export function drawText(
   {
     font = "20px TimesNewRoman",
